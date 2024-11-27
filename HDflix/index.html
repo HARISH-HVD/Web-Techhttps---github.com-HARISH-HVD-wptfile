@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <img src="logo111.png" class="logo" >
+            <div>
+                <button class="language-btn">English ⚡</button>
+                <button>Sign In</button>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1>Your One Stop Collection </h1>
+            <h3>For Making your Life Memorable</h3>
+            <p>Hold Peace and joy in everyday of your Life....</p>
+            <form class="email-signup" action="home.html" onsubmit="getstarted(event)">
+                <input type="email" id="email" placeholder="Email address" required>
+                <button  type="submit" >Get Started</button>
+            </form>
+        </div>
+    </div>
+
+<div class="features">
+    <div class="row">
+        <div class="text-col">
+            <h2>Enjoy on your TV</h2>
+            <p>watch on Smart TV, Mobiles, Tablets, PC, X-Box, PS-5 and More..</p>
+        </div>
+        <div class="img-col">
+            <img src="nettv.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="img-col">
+            <img src="nettv2.png">
+        </div>
+        <div class="text-col">
+            <h2>Download Your Shows to Watch it</h2>
+            <p>Save your favourites easily and watch anywhere you want...</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-col">
+            <h2>Watch Everyday</h2>
+            <p>watch anywhere, anytime without any hesitation..</p>
+        </div>
+        <div class="img-col">
+            <img src="nettv3.png">
+        </div>
+    </div>
+    <div class="row">
+        <div class="img-col">
+            <img src="nettv6.jpg">
+        </div>
+        <div class="text-col">
+            <h2>Create Profile for Kids</h2>
+            <p>Make your Children More creative with kids Profile for good learning...</p>
+        </div>
+    </div>
+</div>
+
+<div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <ul class="accordion">
+        <li>
+            <input type="radio" name="accordion"  id="first">
+            <label for="first">What is HDflix?</label>
+            <div class="content">
+                <p>It is Source where you can watch any movies, shows, 
+                    online for free without any buffering, be the first one to explore everything....</p>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="accordion"  id="second">
+            <label for="second">How much did HDflix cost?</label>
+            <div class="content">
+                <p>It doesn't cost much. It is Pocket-friendly and helps you to maintain your budget... </p>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="accordion"  id="third">
+            <label for="third">Where can I Watch?</label>
+            <div class="content">
+                <p>You can watch it on any Platform using Mobiles, Tablets, Smart TV, and Laptop....</p>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="accordion"  id="fourth">
+            <label for="fourth">How Do I Cancel?</label>
+            <div class="content">
+                <p>You can Cancel it anytime, anywhere without any hesitation with full refund....</p>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="accordion"  id="fifth">
+            <label for="fifth">What Can I Watch on HDflix?</label>
+            <div class="content">
+                <p>You can Watch anything you need as per your requirement there is No limit to
+                     Entertainment, Enjoy every vibe of our site without any hesitation...</p>
+            </div>
+        </li>
+    </ul>
+
+<small>Ready to watch? Enter your Email to create your Membership...</small>
+<form class="email-signup" action="home.html" onsubmit="getstarted(event)">
+    <input type="email" placeholder="Email address" id="email" required>
+    <button type="submit">Get Started</button>
+</form>
+</div>
+
+<div class="footer">
+    <h2>Questions? call 7777-8888-6666</h2>
+
+    <div class="row">
+        <div class="col">
+            <a href="#">FAQ</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Privacy</a>
+            <a href="#">Speed Test</a>
+        </div>
+        <div class="col">
+            <a href="#">Help Center</a>
+            <a href="#">Jobs</a>
+            <a href="#">Cookies Prefrences</a>
+            <a href="#">Legal Notices</a>
+        </div>
+        <div class="col">
+            <a href="#">Account</a>
+            <a href="#">Ways to Watch</a>
+            <a href="#">Corporate Information</a>
+            <a href="#">Only on HDflix</a>
+        </div>
+        <div class="col">
+            <a href="#">Media Center</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <button class="language-btn">English ⚡</button>
+    <p class="copyright-text">HDflix India</p>
+</div>
+
+
+<script src="home.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+<script>
+    VANTA.RINGS({
+      el: "body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 150.00,
+      minWidth: 100.00,
+      scale: 1.00,
+      scaleMobile: 2.00
+    })
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <pre>
+        mouse
+        click
+        key 
+        change 
+        clipboard 
+        select 
+        focus/blur/hover 
+        scroll 
+        resize 
+    </pre>
+
+    <input id="height" placeholder="enter height">
+    <input id="width" placeholder="enter width">
+    <input id="bg" placeholder="enter bg color">
+    <button id="apply" class="btn btn-danger">Apply</button>
+    <button id="rm" class="btn btn-danger">Remove Events</button>
+    <div style="padding: 10px;border: 1px solid black;margin-top: 10px;" id="div"></div>
+
+
+
+
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(() => {
+            const div = $("#div")
+
+            // $("#height").keyup((event) => {
+            //     const h = parseInt($(event.target).val().trim())
+            //     $(div).css({ "height": h + "px" })
+            // })
+            // $("#width").keyup((event) => {
+            //     const w = parseInt($(event.target).val().trim())
+            //     $(div).css({ "width": w + "px" })
+            // })
+            // $("#bg").keyup((event) => {
+            //     const color = $(event.target).val().trim()
+            //     $(div).css({ "background-color": color })
+            // })
+
+            $("#apply").click(() => {
+                const h = parseInt($("#height").val().trim())
+                const w = parseInt($("#width").val().trim())
+                const color = $("#bg").val().trim()
+                $(div).css({
+                    "height": h + "px",
+                    "width": w + "px",
+                    "background-color": color
+                })
+
+                $(div).on("mouseenter",(event) =>{
+                    $(event.target).css("background-color","#ff33fc")
+                })
+                $(div).on("mouseleave",(event) =>{
+                    $(event.target).css("background-color",purple)
+                })
+
+                // $(div).hover(()=>{
+                //     $(div).css("background-color","#ff33fc")
+                // },()=>{
+                //     $(div).css("background-color",color)
+                // })
+
+            })
+
+            $("#rm").click(()=>{
+                $(div).off("mouseenter mouseleave")
+            })
+        })
+
+    </script>
+</body>
+
+</html>

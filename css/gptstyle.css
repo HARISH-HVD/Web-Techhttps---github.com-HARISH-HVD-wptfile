@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    
+}
+
+div.container
+{
+    width: 100vw;
+    height: 100vh; 
+  background-color: black;
+  font-family: sans-serif; color: antiquewhite;
+}
+
+/* header */
+/* {
+
+}
+
+main
+{
+    
+} */
+
+.menu
+{
+ display: flex;
+ justify-content: space-between;
+ border-radius: 5%;
+}

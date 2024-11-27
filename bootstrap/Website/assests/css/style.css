@@ -1,0 +1,63 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand svg
+{
+   width: 35px;
+   height: 35px;
+}
+
+.navbar
+{
+  background-color: transparent !important;
+}
+
+.nav-row a
+{
+  color: white !important;
+}
+
+.list-group li
+{
+    border: 0;
+   padding-left: 10px;
+   opacity: 0.8;
+}
+
+.list-group li:hover
+{
+    background-color: rgba(154, 39, 39, 0.406);
+}
+
+.links-div
+{
+    overflow: auto;
+    height: 75vh;
+}
+
+.contact-form
+{
+ font-size: 70% !important;
+}
+
+.contact-form input,textarea,button
+{
+ font-size: 80% !important;
+}
+
+@media screen and (max-width:576px) {
+  .download-btn-div
+  {
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-form
+  {
+    width: 75vw !important;
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./scissor.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Scores Section -->
+        <div class="scores">
+            <p>Player 1 Score: <span id="player1_score">0</span></p>
+            <p>Player 2 Score: <span id="player2_score">0</span></p>
+        </div>
+
+        <!-- Choices Section -->
+        <div id="player1_section">
+            <h3>Player 1: Make your choice</h3>
+            <div class="weapons">
+                <button onclick="makeChoice('rock', 'player1')">
+                    <i class="far fa-hand-rock"></i>
+                </button>
+                <button onclick="makeChoice('paper', 'player1')">
+                    <i class="far fa-hand-paper"></i>
+                </button>
+                <button onclick="makeChoice('scissor', 'player1')">
+                    <i class="far fa-hand-scissors"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="player2_section" style="display: none;">
+            <h3>Player 2: Make your choice</h3>
+            <div class="weapons">
+                <button onclick="makeChoice('rock', 'player2')">
+                    <i class="far fa-hand-rock"></i>
+                </button>
+                <button onclick="makeChoice('paper', 'player2')">
+                    <i class="far fa-hand-paper"></i>
+                </button>
+                <button onclick="makeChoice('scissor', 'player2')">
+                    <i class="far fa-hand-scissors"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="details">
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script src="paper.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<script>
+
+    async function add(n1, n2) {
+        return new Promise((res, rej) => {
+            setTimeout(() => res(n1 + n2), 3000)
+        })
+    }
+
+    async function sub(n1, n2) {
+        return new Promise((res, rej) => {
+            setTimeout(() => res(n1 - n2), 3000)
+        })
+    }
+
+    async function callfunction() {
+        let r = await add(30, 20)
+        console.log(r)
+        r = await sub(r, 20)
+        console.log(r)
+    }
+
+    callfunction()
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+
+    <script>
+        function function1()     //3s
+        {
+            setTimeout(()=>{
+                console.log("value",10)
+            },3000)
+        }
+
+        function function2(v)     //10ms
+        {
+            console.log("Finish....")
+        }
+
+        function1()
+        function2()
+
+
+    </script>
+</body>
+
+</html>

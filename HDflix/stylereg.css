@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Netflix Sans', sans-serif;
+    background-color: #111;
+}
+
+input,label,button,select,option
+{
+    font-size: 80% !important;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    transition-timing-function: ease-in;
+    transition: all .5s;
+}
+
+.nav.active {
+    background-color: #111;
+}
+
+.nav_left {
+    margin-left: 10px;
+}
+
+.nav_logo {
+    width: 180px;
+}
+
+/* .alert-custom {
+    background-image: url('logo111.png');
+    background-size: 100% auto;     
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    height: 100vh;                  
+  }
+  
+
+.alert-custom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.alert-custom {
+    position: relative;
+    z-index: 1;
+} */
+

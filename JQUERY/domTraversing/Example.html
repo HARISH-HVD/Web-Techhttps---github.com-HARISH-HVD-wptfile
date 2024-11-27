@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <pre>
+        current elements parent /child/siblings(next or prev)
+    </pre>
+    <div class="container">
+        <div class="alert alert-primary" id="alert1" role="alert">
+            A simple<span>primary</span>alert—check it out!
+            <p id="para1">
+                Lorem ipsum dolor sit amet <b>consectetur</b> adipisicing elit. Vero praesentium minus explicabo quidem
+                cum
+                voluptatum pariatur fuga perspiciatis, unde eius autem voluptas dolorum natus necessitatibus ducimus
+                sunt exercitationem vitae quisquam!
+            </p>
+            <p id="para2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero praesentium minus explicabo quidem cum
+                voluptatum pariatur fuga perspiciatis, unde eius autem voluptas dolorum natus necessitatibus ducimus
+                sunt exercitationem vitae quisquam!
+            </p>
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+        </div>
+        <div class="alert alert-success" role="alert">
+            A simple success alert—check it out!
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // const alert1 = document.getElementById("alert1")
+        // const alertChildren = alert1.children
+        // //element => tags  HTMLCollection
+        // //nodes => tags, text, comments
+        // console.log(alertChildren)
+
+        // for(e of alertChildren){
+        //     console.log(e)
+        // }
+
+        const alert1 = document.getElementById("alert1")
+        const alertChildren = alert1.childNodes
+        //element => tags (HTMLCollection) HTML elements
+        //nodes => tags, text, comments(Node list)  Node
+        console.log(alertChildren)
+
+        // for(e of alertChildren){
+        //     console.log(e)
+        // }
+
+
+        // const para1=document.getElementById("para1")
+        // // const para1parent= para1.parentNode
+        // // console.log(para1parent)//alerrt
+        // // console.log(para1parent.parentElement)//container
+        // // console.log(para1parent.parentElement.parentElement)//body
+
+        // const p1= para1.nextSibling
+        // console.log(p1)
+
+        // const p3= para1.nextElementSibling
+        // console.log(p3)
+
+        // const p2= para1.previousSibling
+        // console.log(p2)
+
+        
+        // const p4= para1.previousElementSibling
+        // console.log(p4)
+
+    </script>
+
+</body>
+
+</html>

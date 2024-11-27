@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <button id="get-data">Get Data</button>
+
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $("#get-data").click(async () => {
+                const response = await axios.get("http://127.0.0.1:5500/Ajax/sample4.json")
+                console.log(response.data)
+            })
+        })
+    </script>
+</body>
+
+</html>

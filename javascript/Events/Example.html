@@ -1,0 +1,60 @@
+<body onresize="printText()">
+    <div id="box">
+
+    </div> 
+</body>
+
+
+
+<script>
+//   let i=0
+  function printText()
+  {
+    i++
+    document.getElementById("box").innerHTML+=innerWidth+","+innerHeight+"<br>"
+  }
+
+  let txt=null
+  function getText(textField)
+  {
+    txt=textField.value
+    textField.style.backgroundColor="red"
+    textField.style.color="white"
+  }
+
+  function setText(textField)
+  {
+    textField.value=txt
+    textField.style.backgroundColor="blue"
+    textField.style.color="white"
+  }
+
+</script>
+
+<input placeholder="dont do..copy/cut" oncut="getText(this)" oncopy="getText(this)">
+<input placeholder="dont do..paste" onpaste="setText(this)">
+<br>
+<br>
+<br>
+<input placeholder="number1" onkeyup="add()" onselect="changecolor(this)" id="n1">
+<input placeholder="number2" onkeyup="add()" onselect="changecolor1(this)" id="n2">
+<div id="result"></div>
+<script>
+    function changecolor(text)
+    {
+        text.style.color="pink"
+        text.style.backgroundColor="black"
+    }
+    function changecolor1(text)
+    {
+        text.style.color="yellow"
+        text.style.backgroundColor="green"
+    }
+
+    function add()
+    {
+        const n1=parseInt(document.getElementById("n1").value)
+        const n2=parseInt(document.getElementById("n2").value)
+        document.getElementById("result").innerText=(n1+n2)
+    }
+</script>

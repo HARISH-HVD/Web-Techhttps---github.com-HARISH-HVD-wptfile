@@ -1,0 +1,123 @@
+<!-- <div id="clock"></div> -->
+<!-- <button onclick="startClock">Start</button>
+<button onclick="stopClock">Stop</button> -->
+
+<!-- <div style="height: 100px;
+background-color: cadetblue ; 
+display: none;" id="box">
+
+</div> -->
+
+<!-- <style>
+    .box {
+        height: 100px;
+        background-color: blueviolet;
+        display: none;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+
+        transition:all 2s;
+    }
+</style> -->
+
+<script>
+    // let intervalId=null
+    // let d=new Date()
+    // let clockDiv = document.getElementById("clock")
+    // clockDiv.innerHTML = `${d.getHours()}:
+    //     ${d.getMinutes()}:
+    //     ${d.getSeconds()}`
+
+    // function startClock() {
+        
+    //     let clockDiv = document.getElementById("clock")
+    //     intervalId = setInterval(function () {
+    //          d = new Date()
+    //         clockDiv.innerHTML = `${d.getHours()}:
+    //     ${d.getMinutes()}:
+    //     ${d.getSeconds()}`
+
+    //     }, 1000)
+        
+    // }
+    // function stopClock() {
+    //     clearInterval(intervalId)
+    // }
+
+    // const box = document.getElementById("box")
+    // setTimeout(function () {
+    //     box.style.display = "block"
+    // }, 2000)
+    // setTimeout(function () {
+    //     box.style.backgroundColor = "red"
+    //     box.style.width="100%"
+    //     box.style.left="100px"
+    // }, 4000)
+    let d=new Date()
+    console.log(d)
+
+    console.log(d.getDate())
+    console.log(d.getDay())
+    console.log(d.getMonth()+1)//0 jan 11 dec
+    console.log(d.getFullYear())
+
+    console.log(d.getMinutes())
+    console.log(d.getSeconds())
+    console.log(d.getHours())
+
+    const dob=new Date(2020,10,12,6,42,36)
+   // Date(year,month,date,hr,min,sec,ms)
+    console.log(dob)
+
+    function getDayStr(day){
+        switch(day)
+        {
+            case 0:
+                return "sunday"
+            case 1:
+                return "monday"    
+            case 2:
+                return "tuesday"    
+            case 3:
+                return "wednesday"    
+            case 4:
+                return "thursday"    
+            case 5:
+                return "friday"    
+            case 6:
+                return "saturday"
+
+        }
+    }
+
+
+    const datestr=`${getDayStr(dob.getDay()).toUpperCase().substr(0,3)}  ${dob.getDate()}/${dob.getMonth()}/${dob.getFullYear()}`
+    console.log(datestr)
+
+
+    const oneSecond=1000
+    const oneMin=oneSecond*60
+    const oneHour=oneMin*60
+    const oneDay=oneHour*24
+    const oneMonth=oneDay*30
+    const oneYear=oneMonth*12
+
+    // let d=new Date()
+    // console.log(d.getMilliseconds())
+    // console.log(d.getMinutes())
+    // console.log(d.getHours())
+    // console.log(d.getTime()/oneDay,"Days")
+    // console.log(d.getTime()/oneMonth,"Month")
+    // console.log(d.getTime()/oneYear,"Years")
+    // console.log((d.getTime()/oneYear).toFixed(2),"Year")
+
+    
+    // const diffTime=d.getTime()-dob.getTime()
+    // console.log((diffTime/oneYear).toFixed(0),"Year")
+
+    // console.log(d.toLocaleDateString())
+    // console.log(d.toLocaleString("en-us"))
+
+
+</script>

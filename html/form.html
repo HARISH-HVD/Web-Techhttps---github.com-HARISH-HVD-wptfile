@@ -1,0 +1,133 @@
+<!--
+ 1) textfield
+ 2)buttons
+ 3)label
+ 4)checkbox
+ 5)Radio buttons
+ 6)Dropdown(select one element at a time) 
+ 7)list (multiple)
+ 8)textarea(multiline)
+ 9)
+ 10)form tag
+ -->
+
+ <!-- types of text field 
+ text 
+ tel
+ search 
+ month
+ search 
+ chechbox
+ color 
+ password
+ url 
+ picture
+ email
+ radio
+
+ -->
+<!-- Button types 
+ submit(submit form data to action url)
+reset(clear/reset  all form fields)
+button(on functionality) -->
+
+ <!-- form (action,method[get,post])fields/form-controls button(submit) -->
+
+ <form action="server.php" method="post">
+    <label for="name">Name : </label>
+    <input type="text" id="name" pattern="[A-Za-z ]{3,100}" placeholder="Full Name" name="name">
+    <br>
+    <label for="age">Age : </label>
+    <input type="number" pattern="[0-9]{1,3}" min="1" max="150" placeholder="Age" id="age" name="age">
+    <br>
+    <label for="email">Email-id:</label>
+    <input type="email" required  placeholder="abc@gmail.com" id="email" name="email">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" required id="password" name="password">
+    <br>
+    <label for="datetime">Date-Time:</label>
+    <input type="datetime-local" required id="datetime" name="datetime">
+    <br>
+    <label for="date">Date:</label>
+    <input type="date" required id="date" name="date">
+    <br>
+    <label for="week">Week:</label>
+    <input type="week" required id="week" name="week">
+    
+    <br>
+    <label for="city">City:</label>
+    <select name="city" id="city" required>
+         <option value="">Select City</option>
+         <option value="ngp">Nagpur</option>
+         <option value="ch">Chandrapur</option>
+         <option value="pu">Pune</option>
+         <option value="jg">Jalgaon</option>
+         <option value="nsk">Nashik</option>
+    </select>
+    <br>
+    <label for="city">City:</label>
+    <select name="city" id="city" required multiple>
+         <option value="">Select City</option>
+         <option value="ngp">Nagpur</option>
+         <option value="ch">Chandrapur</option>
+         <option value="pu">Pune</option>
+         <option value="jg">Jalgaon</option>
+    </select>
+    <br>
+    <label for="address">Address:</label>
+    <textarea required id="address" name="address" rows="5" cols="50"></textarea>
+    <br>
+
+    <label for="gender">Gender:</label>
+    <label for="male">Male:</label>
+    <input type="radio" id="male" name="gender" checked>
+    <label for="female">Female:</label>
+    <input type="radio" id="female" name="gender">
+    <label for="other">Others:</label>
+    <input type="radio" id="other" name="gender">
+    <br>
+
+    <label for="hobby">Hobbies:</label>
+    <label for="hobby">Select Hobby:</label>
+    <br>
+    <label for="hobby">Painting</label>
+    <input type="checkbox" value="Painting" name="hobby" checked>
+    <label for="hobby">Running</label>
+    <input type="checkbox" value="Running" name="hobby">
+    <label for="hobby">Reading</label>
+    <input type="checkbox" value="Reading" name="hobby">
+    <label for="hobby">Swimming</label>
+    <input type="checkbox" value="Swimming" name="hobby">
+    <br>
+
+    <label for="color">Fav Color:</label>
+    <input type="color" id="color" name="color">
+    <br>
+
+    <input type="image" src="navy.jpg">
+     <br>    
+
+    <input type="submit" value="Register">
+ </form>
+
+<!-- <li>
+<a href="#">language</a>
+<ul class="Dropdown">
+     <li><a href="Menu.html">menu</a></li>
+     <li><a href="Menu.html">menu</a></li>
+     <li><a href="Menu.html">menu</a></li>
+     <li><a href="Menu.html">menu</a></li>
+</ul></li> -->
+
+
+
+ <!-- file:///D:/Web%20Tech/html/form.html?name=Harish+Dasarwar&age=22&email=harushah36%40gmail.com&password=7410852&datetime=2024-10-19T11%3A02&date=2024-10-19&week=2024-W42&city=ngp&city=ngp&address=asdfghjkl&gender=on&hobby=Painting&color=%23000000&x=160&y=99
+
+ protocol https/https/ftp/smtp/mime.... 
+ host/dns-domain name server regex101.com (ip:port)
+ path pages
+ file about.html 
+ query ?name=raju
+
+ -->

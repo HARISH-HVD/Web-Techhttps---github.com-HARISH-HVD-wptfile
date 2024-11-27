@@ -1,0 +1,74 @@
+<script>
+    /*
+    split()
+    concat()
+    indexof()    char/String
+    lastindexof()
+    touppercase()
+    tolowercase()
+    endswith()
+    startswith()
+    charAt()  get character at given index
+    subString()
+    subStr()
+    slice()
+    === or == match string
+    replace()
+    includes()
+
+    match() validations regEX
+
+    length (property get length of string)
+
+    trim()        remove white spaces from both sides of stirng
+    trimEnd()      remove white space form end of string
+    trimLast()    remove white space from start of string
+    
+    */
+
+   let n= "heilko"   //single line string
+   //let n='hello'   //single line string
+
+
+
+    // `hello this 
+    // is`   //multiple line String
+
+    console.log(n.charAt(4))
+    console.log(n.charAt(7))
+
+    console.log(n.toLowerCase())
+    console.log(n.toUpperCase())
+
+    console.log(n.length)
+
+    console.log(n.substring(2))  
+    console.log(n.substring(2,4))  
+    //end is exclusive/excluded  (not included)  (end-1 is )
+
+    console.log(n.substr(1,4))
+    //substr(startIndex,length)
+
+    console.log(n.slice(2))
+    console.log(n.slice(2,4))
+
+    const para="My name is Harish  to dasarwar."
+
+    console.log(para.length)
+
+    console.log(para.endsWith("dasarwar."))
+    console.log(para.endsWith("My name is Harish dasarwar."))
+    console.log(para.startsWith("My name is Harish dasarwar."))
+    console.log(para.toLowerCase().startsWith("my".toLowerCase()))
+
+    const listWords=para.split("a")
+    console.log(listWords.length)
+    console.table(listWords)
+
+    console.log(para.includes("is"))
+    console.log(para.includes("Name"))
+    console.log(para.indexOf("is"))
+    console.log(para.indexOf("to"))
+    
+   
+</script>

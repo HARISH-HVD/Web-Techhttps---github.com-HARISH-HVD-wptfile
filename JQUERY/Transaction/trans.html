@@ -1,0 +1,259 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashify HD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Information</h2>
+        <div class="form-group">
+            <label>Card Number</label>
+            <input type="text" id="cardNumber" placeholder="12345678">
+        </div>
+        <div class="form-group">
+            <label>CVV</label>
+            <input type="text" id="cvv" placeholder="123">
+        </div>
+        <div class="form-group">
+            <label>Expiry Date</label>
+            <input type="text" id="expiryDate" placeholder="YYYY">
+        </div>
+        <button class="button" onclick="startTransaction()">Pay Now</button>
+
+        <div id="receipt">
+            <p><strong>Receipt:</strong></p>
+            <p id="receiptDetails"></p>
+            <button class="button" onclick="printReceipt()">Print Receipt</button>
+        </div>
+    </div>
+
+    <script>
+        function validatePaymentInfo(paymentInfo) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (paymentInfo.cardNumber && paymentInfo.cvv && paymentInfo.expiryDate) {
+                        console.log("Payment information validated.");
+                        resolve("Validation Successful");
+                    } else {
+                        reject("Validation Failed: Invalid payment information.");
+                    }
+                }, 1000);
+            });
+        }
+    
+        function processPayment(paymentInfo) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const paymentSuccess = Math.random() > 0.2;
+                    if (paymentSuccess) {
+                        console.log("Payment processed successfully.");
+                        resolve("Payment Successful");
+                    } else {
+                        reject("Payment Failed: Insufficient funds or network error.");
+                    }
+                }, 2000);
+            });
+        }
+    
+        function updateOrderStatus(orderId) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Order status updated to 'Completed'.");
+                    resolve("Order Updated");
+                }, 1000);
+            });
+        }
+    
+        function initiateTransaction(paymentInfo, orderId) {
+            validatePaymentInfo(paymentInfo)
+                .then((validationResult) => {
+                    console.log(validationResult);
+                    return processPayment(paymentInfo);
+                })
+                .then((paymentResult) => {
+                    console.log(paymentResult);
+                    return updateOrderStatus(orderId).then(() => paymentResult); // Pass paymentResult to next .then
+                })
+                .then((paymentResult) => {
+                    console.log("Transaction completed successfully!");
+                    showReceipt(orderId, paymentResult);
+                })
+                .catch((error) => {
+                    console.error("Transaction failed:", error);
+                });
+        }
+    
+        function startTransaction() {
+            const paymentInfo = {
+                cardNumber: document.getElementById("cardNumber").value,
+                cvv: document.getElementById("cvv").value,
+                expiryDate: document.getElementById("expiryDate").value
+            };
+            const orderId = "ORDER-HD";
+            initiateTransaction(paymentInfo, orderId);
+        }
+    
+        function showReceipt(orderId, paymentResult) {
+            const receipt = document.getElementById("receipt");
+            const receiptDetails = document.getElementById("receiptDetails");
+            receiptDetails.innerText = `Order ID: ${orderId}\n${paymentResult}`;
+            receipt.style.display = "block";
+        }
+    
+        function printReceipt() {
+            const receiptContent = document.getElementById("receiptDetails").innerText;
+            const printWindow = window.open('', '', 'width=600,height=400');
+            printWindow.document.write('<pre>' + receiptContent + '</pre>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashify HD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Information</h2>
+        <div class="form-group">
+            <label>Card Number</label>
+            <input type="text" id="cardNumber" placeholder="12345678">
+        </div>
+        <div class="form-group">
+            <label>CVV</label>
+            <input type="text" id="cvv" placeholder="123">
+        </div>
+        <div class="form-group">
+            <label>Expiry Date</label>
+            <input type="text" id="expiryDate" placeholder="YYYY">
+        </div>
+
+        <!-- OTP Section -->
+        <div class="form-group">
+            <button class="button" onclick="generateOTP()">Generate OTP</button>
+            <p id="otpDisplay"></p> <!-- Display generated OTP -->
+            <label>Enter OTP</label>
+            <input type="text" id="otpInput" placeholder="Enter OTP">
+        </div>
+
+        <button class="button" onclick="startTransaction()">Pay Now</button>
+
+        <div id="receipt" style="display: none;">
+            <p><strong>Receipt:</strong></p>
+            <p id="receiptDetails"></p>
+            <button class="button" onclick="printReceipt()">Print Receipt</button>
+        </div>
+    </div>
+
+    <script>
+        let generatedOTP = null; 
+
+        // OTP Generator
+        function generateOTP() {
+            generatedOTP = Math.floor(1000 + Math.random() * 9000); // Generate a 6-digit OTP
+            document.getElementById("otpDisplay").innerText = `Your OTP: ${generatedOTP}`;
+            console.log("Generated OTP:", generatedOTP); // For debugging
+        }
+
+        function validatePaymentInfo(paymentInfo) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (paymentInfo.cardNumber && paymentInfo.cvv && paymentInfo.expiryDate) {
+                        console.log("Payment information validated.");
+                        resolve("Validation Successful");
+                    } else {
+                        reject("Validation Failed: Invalid payment information.");
+                    }
+                }, 1000);
+            });
+        }
+    
+        function processPayment(paymentInfo) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const paymentSuccess = Math.random() > 0.2;
+                    if (paymentSuccess) {
+                        console.log("Payment processed successfully.");
+                        resolve("Payment Successful");
+                    } else {
+                        reject("Payment Failed: Insufficient funds or network error.");
+                    }
+                }, 2000);
+            });
+        }
+    
+        function updateOrderStatus(orderId) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Order status updated to 'Completed'.");
+                    resolve("Order Updated");
+                }, 1000);
+            });
+        }
+    
+        function initiateTransaction(paymentInfo, orderId) {
+            validatePaymentInfo(paymentInfo)
+                .then((validationResult) => {
+                    console.log(validationResult);
+                    return processPayment(paymentInfo);
+                })
+                .then((paymentResult) => {
+                    console.log(paymentResult);
+                    return updateOrderStatus(orderId).then(() => paymentResult); // Pass paymentResult to next .then
+                })
+                .then((paymentResult) => {
+                    console.log("Transaction completed successfully!");
+                    showReceipt(orderId, paymentResult);
+                })
+                .catch((error) => {
+                    console.error("Transaction failed:", error);
+                });
+        }
+    
+        function startTransaction() {
+            const paymentInfo = {
+                cardNumber: document.getElementById("cardNumber").value,
+                cvv: document.getElementById("cvv").value,
+                expiryDate: document.getElementById("expiryDate").value
+            };
+            const enteredOTP = document.getElementById("otpInput").value;
+
+            // Validate OTP
+            if (parseInt(enteredOTP) !== generatedOTP) {
+                alert("Invalid OTP. Please try again.");
+                return;
+            }
+
+            const orderId = "ORDER-HD";
+            initiateTransaction(paymentInfo, orderId);
+        }
+    
+        function showReceipt(orderId, paymentResult) {
+            const receipt = document.getElementById("receipt");
+            const receiptDetails = document.getElementById("receiptDetails");
+            receiptDetails.innerText = `Order ID: ${orderId}\n${paymentResult}`;
+            receipt.style.display = "block";
+        }
+    
+        function printReceipt() {
+            const receiptContent = document.getElementById("receiptDetails").innerText;
+            const printWindow = window.open('', '', 'width=600,height=400');
+            printWindow.document.write('<pre>' + receiptContent + '</pre>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+
+</body>
+</html>

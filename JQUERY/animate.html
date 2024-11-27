@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .alert {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="alert alert-primary w-50" role="alert">
+            Harish Dasarwar !! Happy Diwali !!
+        </div>
+        <button id="big" type="button" class="btn btn-primary">Big</button>
+        <button id="small" type="button" class="btn btn-secondary">Small</button>
+    </div>
+
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> // online -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+        // $(document).ready(function(){
+        // ways to write a call back function
+        // })
+        $(document).ready(() => {
+            $("#big").click(function () {
+                $(".alert").animate({ padding: "15px" }, 1000, function () {
+                    // $(".alert").animate({left:"100px"},function(){
+                    //     $(".alert").animate({left:"-100px"},function(){
+                    //         $(".alert").animate({top:"100px"},function(){
+                    //             $(".alert").animate({top:"-15px"})
+                    //         })
+                    //     })
+                    // })
+
+                })
+            })
+            $("#small").click(function () {
+                $(".alert").animate({ padding: "15px" })
+            })
+
+            $(".alert").animate({ left: "200px", top: "0px" }, 1000, function () {
+                $(".alert").animate({ left: "200px", top: "200px" }, function () {
+                    $(".alert").animate({ left: "0px", top: "200px" }, function () {
+                        $(".alert").animate({ left: "0px", top: "0px" },function(){
+
+                        })
+                    })
+                })
+            })
+
+        })
+    </script>
+
+
+</body>
+
+</html>

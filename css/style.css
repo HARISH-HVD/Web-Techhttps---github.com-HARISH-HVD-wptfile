@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+
+
+/* (* all) universal selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* TAG selector*/
+div.container {
+    width: 100vw;
+    /*vx[viewport width] 100=> 100% complete width of viewport */
+
+    height: 100vh;
+    /*vh[viewport height] 100=> 100% complete height of viewport */
+
+    /* border: black 2px solid; */
+    /*border-color,border-width,border-style:"solid/dotted/dashed/inset/outset/double..."*/
+}
+
+/* percent vs viewport*/
+header {
+    height: 10vh;
+    background-color: rgb(71, 19, 19);
+}
+
+main {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    /* horizontal center */
+    align-items: center;
+    /* vertical center */
+    background-image: url(black.jpg);
+    background-size: contain;
+}
+
+footer {
+    height: 20vh;
+    background-color: rgb(71, 19, 19);
+}
+
+.top-heading {
+    color: blueviolet;
+    /* background-color: rgb(185, 164, 203); */
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight:700;
+    font-style: normal;
+}
+
+.top-para {
+    color: rgb(184, 164, 202);
+    background-color: rgb(36, 1, 69);
+    padding-left:10px ;
+    padding-top:20px ;
+    padding-bottom:30px ;
+    margin-top:10px ;
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight:700;
+    font-style: normal;
+    border-radius: 2%;
+}
+
+.heading {
+    color: brown;
+    padding: 15px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight:700;
+    font-style: normal;
+}
+
+.para {
+    color: rgb(202, 184, 173);
+    background-color: rgb(134, 88, 54);
+    padding-left:10px ;
+    padding-top:10px ;
+    padding-bottom:10px ;
+    margin-top:10px ;
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight:700;
+    font-style: normal;
+    border-radius: 2%;
+}
+
+.main-content {
+    background-color: rgb(236, 236, 234);
+    height: 80%;
+    width: 80%;
+    box-shadow: 3px 3px 5px black, -3px -3px 5px red, 10px 10px 10px palevioletred;
+    /* +hs(right) +vs(bottom) blur color */
+    /* -hs(left) -vs(top) blur color */
+
+    padding: 40px 30px 10px;
+    /* 10px top-bottom 30px left-right */
+    /* 40px top 30px left-right  10px bottom */
+
+    /* for four  :  padding: 40px 30px 10px 90px; */
+    /* 40px top 30px right  10px bottom 90px left  */
+
+    border-radius: 3%;
+
+    font-family: sans-serif;
+
+}
+
+/* descendent selector */
+.main-content h1 {
+    color: black;
+}

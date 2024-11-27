@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json-Server</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <button id="get-data">Get Data(get)</button>
+    <button id="get-id-data">Get ID Data(get)</button>
+    <button id="set-data">set Data(post)</button>
+    <button id="update-data">update Data(put)</button>
+    <button id="partial-upt-data">partial update Data(patch)</button>
+    <button id="delete-data">Delete Data(delete)</button>
+
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $("#get-data").click(async () => {
+                const response = await axios.get("http://localhost:3000/persons/1")  //getting person of  id=1
+                console.log(response.data)
+            })
+        })
+        $(document).ready(() => {
+            $("#get-id-data").click(async () => {
+                const response = await axios.get("http://localhost:3000/persons")
+                console.log(response.data)
+            })
+        })
+        $(document).ready(() => {
+            $("#set-data").click(async () => {
+                const response = await axios.post("http://localhost:3000/persons",{
+                    id:"3",
+                    name:"Mrunal",
+                    age:"24",
+                    mobile:"7418529635"
+                })
+                console.log(response.data)
+            })
+        })
+        $(document).ready(() => {
+            $("#update-data").click(async () => {
+                const response = await axios.put("http://localhost:3000/persons/2",{
+                    id:"2",
+                    name:"Rohan",
+                    age:"26",
+                    mobile:"7418529635"
+                })
+                console.log(response.data)
+            })
+        })
+        $(document).ready(() => {
+            $("#partial-upt-data").click(async () => {
+                const response = await axios.patch("http://localhost:3000/persons/2",{
+                    age:"28",
+                    mobile:"7418529635"
+                })
+                console.log(response.data)
+            })
+        })
+        $(document).ready(() => {
+            $("#delete-data").click(async () => {
+                const response = await axios.delete("http://localhost:3000/persons/2",{
+                    age:"28",
+                    mobile:"7418529635"
+                })
+                console.log(response.data)
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch⌛</title>
+    <style>
+        .container{
+            margin: 0;
+            padding:0;
+        }
+
+        #watch {
+            font-size: 2em;
+            display: flex;
+            margin: 20px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #774184;
+        }
+    </style>
+</head>
+<body>
+<div class="container"></div>
+<div id="watch">
+    <span id="h">00</span>:
+    <span id="m">00</span>:
+    <span id="s">00</span>:
+    <span id="ms">00</span>
+</div>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<button onclick="reset()">Reset</button>
+
+<script>
+    const h = document.getElementById("h")
+    const m = document.getElementById("m")
+    const s = document.getElementById("s")
+    const ms = document.getElementById("ms")
+
+    let milliseconds = 0, seconds = 0, minutes = 0, hours = 0;
+    let intervalId = null;
+
+    function start() {
+        if (!intervalId) { // Only start if not already running
+            intervalId = setInterval(updateTime, 10); // Update every 10 ms for accuracy
+        }
+    }
+
+    function stop() {
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    function reset() {
+        stop();
+        milliseconds = seconds = minutes = hours = 0;
+        updateDisplay();
+    }
+
+    function updateTime() {
+        milliseconds += 10;
+
+        if (milliseconds === 1000) {
+            milliseconds = 0;
+            seconds++;
+        }
+
+        if (seconds === 60) {
+            seconds = 0;
+            minutes++;
+        }
+
+        if (minutes === 60) {
+            minutes = 0;
+            hours++;
+        }
+
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        h.innerText = hours.toString().padStart(2, '0');
+        m.innerText = minutes.toString().padStart(2, '0');
+        s.innerText = seconds.toString().padStart(2, '0');
+        ms.innerText = (milliseconds).toString().padStart(2, '0');
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Home | HDflix</title>
+  <link rel="stylesheet" href="stylehm.css">
+</head>
+
+<body>
+  <div class="nav">
+    <div class="nav_left">
+      <a href="home.html">
+        <img class="nav_logo" src="logo111.png" alt=""></a>
+    </div>
+    <!-- <div class="nav_right">
+      <img src="avatar.png" class="nav_avatar" alt="">
+    </div> -->
+    <div class="nav_right nav_button" onclick="openNewPage('file:///D:/Web%20Tech/HDflix/registerhd.html')">
+      <img src="avatar.png" class="nav_avatar" alt="">
+    </div>
+ </div>
+
+  <!-- ----------banner------------ -->
+
+  <header id="banner">
+    <div id="banner_contents">
+      <h1 id="banner_title"></h1>
+      <div id="banner_buttons">
+        <button id="banner_button">Play</button>
+        <button id="banner_button">My List</button>
+      </div>
+      <p id="banner_description"></p>
+    </div>
+    <div id="banner_fadebottom"></div>
+  </header>
+
+  <!-- -----------row---------------- -->
+
+  <div id="headrow">
+    <div class="row">
+      <h2 class="row_title"></h2>
+      <div class="row_posters"></div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      var nav = document.querySelector(".nav");
+      nav.classList.toggle("active", window.scrollY > 0);
+    })
+  </script>
+
+  <script src="home.js"></script>
+
+</body>
+
+</html>
